@@ -12,7 +12,7 @@ def sending_email(from_address, to_address, names, password):
         msg = MIMEMultipart() 
         msg['From'] = from_address 
         msg['To'] = to_address 
-        msg['Subject'] = "IEEE Gesture Control Workshop Certificate"
+        msg['Subject'] = "Certificate"
         body = ' '
         msg.attach(MIMEText(body, 'plain')) # attaching the body with the msg instance
           
