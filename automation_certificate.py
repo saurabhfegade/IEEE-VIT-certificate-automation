@@ -17,7 +17,9 @@ def sending_email(from_address, to_address, names, password):
         msg.attach(MIMEText(body, 'plain')) # attaching the body with the msg instance
           
         filename = "%s.jpg" %names # opening the file to be sent
-        attachment = open(path, "rb") # Enter path of the certificates as raw string 
+        attachment = open(path, "rb") 
+        
+        # Enter path of the certificates as raw string 
                                       # e.g. r"C:\Users\Saurabh\Desktop\Certificate Automation\certificates\%s.jpg" %names
         p = MIMEBase('application', 'octet-stream')
         p.set_payload((attachment).read())
