@@ -14,13 +14,12 @@ def sending_email(from_address, to_address, names, password):
         msg['To'] = to_address 
         msg['Subject'] = "Certificate"
         body = ' '
-        msg.attach(MIMEText(body, 'plain')) # attaching the body with the msg instance
+        msg.attach(MIMEText(body, 'plain')) 
           
-        filename = "%s.jpg" %names # opening the file to be sent
+        filename = "%s.jpg" %names 
         attachment = open(path, "rb") 
         
-        # Enter path of the certificates as raw string 
-                                      # e.g. r"C:\Users\Saurabh\Desktop\Certificate Automation\certificates\%s.jpg" %names
+
         p = MIMEBase('application', 'octet-stream')
         p.set_payload((attachment).read())
 
@@ -58,6 +57,12 @@ def generating_certificate(filename, certificate, textfont):
 os.makedirs('certificates',exist_ok=True) # make new folder names certificates in working directory
 generating_certificate('responses1.csv', 'Sample Certificate.jpg', 'DobkinScript.ttf')
 
+
+# attaching the body with the msg instance
+# opening the file to be sent
+
+# Enter path of the certificates as raw string 
+# e.g. r"C:\Users\Saurabh\Desktop\Certificate Automation\certificates\%s.jpg" %names
 
 
 
